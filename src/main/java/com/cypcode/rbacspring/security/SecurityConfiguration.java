@@ -47,7 +47,7 @@ public class SecurityConfiguration {
 	}
 
 	private void sharedSecurityConfiguration(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.csrf(AbstractHttpConfigurer::disable).cors().configurationSource(corsConfigurationSource()).and()
+		httpSecurity.csrf(AbstractHttpConfigurer::disable)
 				.sessionManagement(httpSecuritySessionManagementConfigurer -> {
 					httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 				});
